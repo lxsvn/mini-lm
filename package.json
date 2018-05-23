@@ -1,0 +1,16 @@
+{
+  "name": "iq",
+  "version": "2.0.0",
+  "description": "超级大脑",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://www.iq.com"
+  },
+  "keywords": [],
+  "author": "IQTeam",
+  "license": "MIT",
+  "dependencies": {
+    "wafer2-client-sdk": "^1.0.0"
+  }
+}

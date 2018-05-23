@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/home/index", 
+    "pages/entry/entry",
+    "pages/test/socket"
+  ],
+  "window": {
+    "backgroundColor": "#052152",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffd56e",
+    "navigationBarTitleText": "IQ",
+    "navigationBarTextStyle": "white"
+  }
+}
