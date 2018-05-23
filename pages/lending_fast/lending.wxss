@@ -1,0 +1,49 @@
+/* pages/lending_fast/lending.wxss *//* pages/high_limit/limit.wxss */
+.pro_list {
+  width: 94%;
+  background: #f0f;
+  border-radius: 15rpx;
+  position: relative;
+  margin-left: 2%;
+  margin-top: 20rpx;
+  padding: 10rpx;
+}
+
+.pro_item {
+  overflow: hidden;
+}
+.pro_body{
+  height: 180rpx;
+}
+.pro_logo{
+  float: left;
+  width: 180rpx;height: 180rpx;
+}
+
+.pro_name{
+  
+}
+
+.ic_top{
+  float: right;
+  width: 50rpx;height: 50rpx;
+}
+
+.ic_time{
+   width: 50rpx;height: 50rpx;
+}
+
+.interest{
+  float: right;
+}
+
+.user_info {
+  width: 15%;
+  height: 10%;
+  margin-top: 1.6vw;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 100rpx;
+  left: 85%;
+}

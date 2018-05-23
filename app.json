@@ -1,14 +1,45 @@
 {
   "pages": [
-    "pages/home/index", 
-    "pages/entry/entry",
-    "pages/test/socket"
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/high_limit/limit",
+    "pages/low_rate/rate",
+    "pages/lending_fast/lending"
   ],
   "window": {
-    "backgroundColor": "#052152",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffd56e",
-    "navigationBarTitleText": "IQ",
+    "navigationBarBackgroundColor": "#445E99",
+    "navigationBarTitleText": "爸爸贷款",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#445E99",
+    "color": "#999",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/imgs/ic_home_unselect.png",
+        "selectedIconPath": "/assets/imgs/ic_home_select.png"
+      },
+      {
+        "pagePath": "pages/high_limit/limit",
+        "text": "额度高",
+        "iconPath": "/assets/imgs/ic_limit_unselect.png",
+        "selectedIconPath": "/assets/imgs/ic_limit_select.png"
+      },
+      {
+        "pagePath": "pages/low_rate/rate",
+        "text": "利率低",
+        "iconPath": "/assets/imgs/ic_rate_unselect.png",
+        "selectedIconPath": "/assets/imgs/ic_rate_select.png"
+      },
+      {
+        "pagePath": "pages/lending_fast/lending",
+        "text": "放款快",
+          "iconPath": "/assets/imgs/ic_loan_unselect.png",
+          "selectedIconPath": "/assets/imgs/ic_loan_select.png"
+      }
+    ]
   }
 }

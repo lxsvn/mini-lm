@@ -1,7 +1,0 @@
-<view class="title">
-  贷超小程序
-</view>
- 
-<button type="primary" bindtap="goHomePage">去首页</button>
-<button type="warn" bindtap="goTestSocketPage">测试socket</button>
-<text>{{msg}}</text>
