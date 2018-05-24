@@ -18,7 +18,7 @@
 
       <image class='ic_top' src='/assets/imgs/ic_home_select.png'></image>
       <view>
-        <text class='apply_number'> 申请人数：123456</text>
+        <text class='apply_number' > 申请人数：123456</text>
 
         <text class='interest'> 2%/月</text>
       </view>

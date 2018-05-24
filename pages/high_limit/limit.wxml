@@ -1,6 +1,6 @@
 <!--pages/high_limit/limit.wxml-->
 <view class="pro_list"  wx:for="{{proList}}">
-    <view class='pro_item' >
+    <view class='pro_item' bindtap='to_pro_detail' data-index='{{index}}'>
     <image src='/assets/imgs/ic_home_select.png' class='pro_logo'> </image>
 
     <view class='pro_body'>

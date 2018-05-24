@@ -1,7 +1,10 @@
 /* pages/lending_fast/lending.wxss *//* pages/high_limit/limit.wxss */
 .pro_list {
   width: 94%;
-  background: #f0f;
+  background: #fff;
+  border-width: 3rpx;
+  border-color: #666;
+  border-style: solid;
   border-radius: 15rpx;
   position: relative;
   margin-left: 2%;
@@ -12,31 +15,58 @@
 .pro_item {
   overflow: hidden;
 }
-.pro_body{
+
+.pro_body {
+  height: 180rpx;
+  margin-left: 195rpx;
+}
+
+.pro_logo {
+  float: left;
+  width: 180rpx;
   height: 180rpx;
 }
-.pro_logo{
-  float: left;
-  width: 180rpx;height: 180rpx;
+
+.pro_name {
+  font-size: 34rpx;
 }
 
-.pro_name{
-  
-}
-
-.ic_top{
+.ic_top {
   float: right;
-  width: 50rpx;height: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
-.ic_time{
-   width: 50rpx;height: 50rpx;
+.apply_number {
+  font-size: 26rpx;
 }
 
-.interest{
+.interest {
+  font-size: 26rpx;
+  margin-top: 10rpx;
   float: right;
 }
 
+.ic_time {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 20rpx;
+}
+
+.get_time {
+  font-size: 26rpx;
+  color: #f0f;
+  position: relative;
+  margin-left: 10rpx;
+  bottom: 10rpx;
+}
+
+.loan_limit {
+  font-size: 26rpx;
+  color: #f0f;
+  margin-top: 30rpx;
+  float: right;
+}
 .user_info {
   width: 15%;
   height: 10%;
