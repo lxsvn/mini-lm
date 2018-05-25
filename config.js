@@ -4,7 +4,7 @@
 
 var hostWS = 'wss://mi-iq-socket-dev.houputech.com/iq'  //开发环境
 
-var appId = 'wxe47c6cc9ce8d7d88'
+var appId = 'wx66978746c3343110'
 
 var service = {
   appId,
