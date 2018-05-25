@@ -26,57 +26,95 @@ swiper swiper-item image {
 }
 
 .pro_body {
-  height: 180rpx;
-  margin-left: 195rpx;
+  height: 150rpx;
+  padding-right: 20rpx;
+  margin-left: 165rpx;
 }
 
 .pro_logo {
   float: left;
-  width: 180rpx;
-  height: 180rpx;
+  width: 150rpx;
+  height: 150rpx;
 }
 
 .pro_name {
-  font-size: 34rpx;
+  font-size: 30rpx;
 }
 
 .ic_top {
   float: right;
-  width: 50rpx;
-  height: 50rpx;
+  margin-top: 20rpx;
+  width: 66rpx;
+  height: 20rpx;
+}
+
+.apply_interest_line{
+ 
 }
 
 .apply_number {
-  font-size: 26rpx;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  color: #999;
 }
 
 .interest {
-  font-size: 26rpx;
+  font-size: 24rpx;
   margin-top: 10rpx;
   float: right;
+   color: #fa5a5c;
+}
+
+.month {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  float: right;
+   color: #999;
 }
 
 .ic_time {
-  width: 50rpx;
-  height: 50rpx;
+  width: 35rpx;
+  height: 35rpx;
   margin-top: 20rpx;
 }
 
 .get_time {
-  font-size: 26rpx;
-  color: #f0f;
+  font-size: 24rpx;
+  color: #fa5a5c;
   position: relative;
   margin-left: 10rpx;
-  bottom: 10rpx;
+  bottom: 5rpx;
 }
 
 .loan_limit {
-  font-size: 26rpx;
-  color: #f0f;
-  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: #fa5a5c;
+  margin-top: 20rpx;
   float: right;
 }
 
+.limit_cn {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 20rpx;
+  float: right;
+}
+
+.line{
+  width: 100%;
+  height: 2rpx;
+  margin-top: 20rpx;
+  background-color: #999;
+}
+
+.footer{
+  padding-left: 165rpx;
+}
+
+.application_requirement{
+font-size: 26rpx;
+
+}
 .user_info {
   width: 15%;
   height: 10%;

@@ -1,42 +1,46 @@
 <!--index.wxml-->
 
-<swiper indicator-dots="true" 
-  autoplay="true" interval="3000" duration="1000">
+<swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
+      <image src="{{item}}" class="slide-image" />
     </swiper-item>
   </block>
 </swiper>
 
-<view class="pro_list"  wx:for="{{proList}}">
-    <view class='pro_item' >
+<view class="pro_list" wx:for="{{proList}}">
+  <view class='pro_item'>
     <image src='/assets/imgs/ic_home_select.png' class='pro_logo'> </image>
-
     <view class='pro_body'>
       <text class='pro_name'>爸爸贷款</text>
+      <image class='ic_top' src='/assets/imgs/ic_top_one.png' hidden='{{index!=0}}'></image>
+      <image class='ic_top' src='/assets/imgs/ic_top_two.png' hidden='{{index!=1}}'></image>
+      <image class='ic_top' src='/assets/imgs/ic_top_three.png' hidden='{{index!=2}}'></image>
+      <view class='apply_interest_line'>
+        <text class='apply_number'> 申请人数：123456</text>
+        <text class='month'>/月</text>
+        <text class='interest'> 2%</text>
 
-      <image class='ic_top' src='/assets/imgs/ic_home_select.png'></image>
-      <view>
-        <text class='apply_number' > 申请人数：123456</text>
-
-        <text class='interest'> 2%/月</text>
       </view>
 
-      <view>
-        <image src='/assets/imgs/ic_home_select.png' class='ic_time'></image>
+      <view class='time_limit_line'>
+        <image src='/assets/imgs/ic_home_time.png' class='ic_time'></image>
 
         <text class='get_time'>5分钟到卡</text>
 
-        <text class='loan_limit'>额度：1千-5千元</text>
+        <text class='loan_limit'>1千-5千元</text>
+        <text class='limit_cn'>额度：</text>
       </view>
 
 
     </view>
 
-    <view class='line'>---------------------------------------</view>
+    <view class='line'></view>
 
-    <view class='footer'>贷款限制详情</view>
+    <view class='footer'>
+      <text class='application_requirement'>申请限制条件 身份证 要有钱  身份证 要有钱 身份证 要有钱</text>
+
+    </view>
 
 
   </view>
