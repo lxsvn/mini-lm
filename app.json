@@ -7,7 +7,7 @@
     "pages/lending_fast/lending"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#445E99",
     "navigationBarTitleText": "爸爸贷款",
     "navigationBarTextStyle": "white"
