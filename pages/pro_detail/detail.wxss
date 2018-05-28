@@ -1,0 +1,101 @@
+/* pages/pro_detail/detail.wxss */
+
+.pro_info {
+  width: 100%;
+  overflow: hidden;
+  padding: 25rpx;
+}
+
+.pro_img {
+  float: left;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 15rpx;
+}
+
+.pro_name {
+  font-size: 30rpx;
+}
+
+.detail_view {
+  margin-top: 20rpx;
+}
+
+.limit_tv {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.limit_detail {
+  font-size: 24rpx;
+  color: #fa5a5c;
+}
+
+.rate_tv {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 20%;
+}
+
+.rate_detail {
+  font-size: 24rpx;
+  color: #fa5a5c;
+}
+
+.line {
+  width: 100%;
+  height: 20rpx;
+  background-color: #e8e8e8;
+}
+
+.pro_limit {
+  width: 100%;
+  padding: 40rpx;
+}
+
+.latest_time_tv {
+  font-size: 32rpx;
+}
+
+.latest_time {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.apply_condition_tv {
+   font-size: 32rpx;
+    margin-top: 20rpx;
+}
+
+.condition_list {
+}
+
+.condition {
+   font-size: 26rpx;
+    color: #999;
+}
+
+.approve_data_tv {
+   font-size: 32rpx;
+   margin-top: 20rpx;
+}
+
+.approve_list {
+}
+
+.approve_data {
+   font-size: 26rpx;
+    color: #999;
+}
+
+.btn_apply {
+  position: fixed;
+  height: 100rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  border-radius: 0rpx;
+  background-color: #445e99;
+  bottom: 0rpx;
+  _position: absolute;
+}

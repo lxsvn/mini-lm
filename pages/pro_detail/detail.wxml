@@ -1,0 +1,36 @@
+<!--pages/pro_detail/detail.wxml-->
+<view class='pro_info'>
+
+  <image class='pro_img' src='{{proInfo.Extend5}}'></image>
+
+  <text class='pro_name'>{{proInfo.Name}}</text>
+
+  <view class='detail_view'>
+
+    <text class='limit_tv'>额度：</text>
+
+    <text class='limit_detail'>{{proInfo.Extend2}}</text>
+
+    <text class='rate_tv'>利息：</text>
+
+    <text class='rate_detail'>{{proInfo.Rate}}%/月</text>
+  </view>
+
+</view>
+<view class='line'></view>
+<view class='pro_limit'>
+  <view class='latest_time_tv'>最迟放款：</view>
+  <view>
+    <text class='latest_time'>5分钟</text>
+  </view>
+  <view class='apply_condition_tv'>申请条件：</view>
+  <view class='condition_list' wx:for='{{conditionList}}'>
+    <text class='condition'> · {{conditionList[index]}}</text>
+  </view>
+    <view class='approve_data_tv'>认证材料：</view>
+  <view class='approve_list' wx:for='{{approveList}}'>
+    <text class='approve_data'> · {{approveList[index]}}</text>
+  </view>
+
+</view>
+<button class='btn_apply' bindtap='to_web'>申请贷款</button>

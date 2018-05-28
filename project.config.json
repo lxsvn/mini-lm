@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -45,6 +45,12 @@
 					"id": -1,
 					"name": "room",
 					"pathName": "pages/game_room/game_room",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pro_detail",
+					"pathName": "pages/pro_detail/detail",
 					"query": ""
 				}
 			]

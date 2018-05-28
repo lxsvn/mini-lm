@@ -1,0 +1,5 @@
+/* pages/web_view/web.wxss */
+web-view{
+  width: 100%;
+  height: 100%;
+}
