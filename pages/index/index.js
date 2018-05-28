@@ -1,25 +1,47 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var config = require('../../config.js');
+var pageIndex = 1;
 Page({
   data: {
     imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      '/assets/imgs/defalt_banner.jpg',
     ],
-    proList: [
-      {}, {}, {}, {}, {}, {}, {}, {}, {}
-    ]
+    proList: [],
+    hasNextPage: true
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+/**
+ * 前往产品详情页
+ */
+  to_pro_detail: function (data) {
+    var index = data.currentTarget.dataset.index;
+
+    var proList = this.data.proList;
+ 
+    var s = proList[index]
+  
+    wx.setStorage({
+      key: 'proDetail',
+      data: s,
     })
+
+    wx.navigateTo({
+      url: '/pages/pro_detail/detail',
+    })
+
   },
+
   onLoad: function () {
+
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    getProLsit(this, pageIndex)
+
+    getHomeInfo(this)
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -47,6 +69,8 @@ Page({
       })
     }
   },
+
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -54,5 +78,88 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  /**
+    * 下拉刷新
+    */
+  onPullDownRefresh: function () {
+    var that = this;
+    pageIndex = 1;
+    getProLsit(that, pageIndex);
+  },
+  /**
+   * 上拉加载
+   */
+  onReachBottom: function () {
+
+    var that = this;
+    if (that.data.hasNextPage) {
+
+      wx.showLoading({
+        title: '拼命加载中',
+      })
+
+      pageIndex++;
+
+      getProLsit(that, pageIndex);
+    }
+
   }
 })
+
+/**
+ * 请求产品列表数据
+ */
+function getProLsit(that, pageIndex) {
+  var url = config.productsListUrl;
+  wx.request({
+    url: url,
+    data: {
+      "pageIndex": pageIndex,
+      "pageNo": '20',
+      "sortBy": '0',
+      "channel": 'miniapp',
+    },
+    success: function (res) {
+      that.data.hasNextPage = res.data.HasNextPage;
+      if (pageIndex == 1) {
+        var oldProList = res.data.Models;
+        setTimeout(function () {
+          wx.stopPullDownRefresh();
+        }, 1000);
+
+      } else {
+        var oldProList = that.data.proList
+        var proList = res.data.Models;
+        for (var i = 0, len = proList.length; i < len; i++) {
+          oldProList.push(proList[i])
+        }
+      }
+
+      that.setData({
+        proList: oldProList
+      })
+      wx.hideLoading()
+    }
+  })
+}
+
+/**
+ * 获取首页信息
+ */
+function getHomeInfo(that){
+  var url = config.homeInfoUrl;
+  wx.request({
+    url: url,
+    success:function(res){
+      console.log(res.data)
+      var banners=[];
+      for (var i = 0, len = res.data.Banners.length; i < len; i++) {
+        banners.push(res.data.Banners[i].Image)
+      }
+      that.setData({
+        imgUrls: banners
+      })
+    }
+  })
+}

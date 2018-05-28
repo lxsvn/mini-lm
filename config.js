@@ -8,6 +8,8 @@ var baseUrl ='https://mbbd-api.houputech.com'
 
 var productsListUrl = baseUrl +'/1.0/contentsV2/Products'
 
+var homeInfoUrl = baseUrl +'/1.0/contentsV2/HomePageInfo'
+
 var appId = 'wx66978746c3343110'
 
 var service = {
@@ -29,4 +31,4 @@ var baseMsg = {
   "Data": {}
 }
 
-module.exports = { service, apiCodes, baseMsg, productsListUrl} 
+module.exports = { service, apiCodes, baseMsg, productsListUrl, homeInfoUrl} 

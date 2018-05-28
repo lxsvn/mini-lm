@@ -12,24 +12,23 @@ Page({
     hasNextPage:true
   },
 
+  /**
+  * 前往产品详情页
+  */
   to_pro_detail: function (data) {
     var index = data.currentTarget.dataset.index;
+
     var proList = this.data.proList;
-    console.log(proList);
-    var s = proList[0]
+
+    var s = proList[index]
+    console.log(s);
     wx.setStorage({
       key: 'proDetail',
-      data: proList[index],
+      data: s,
     })
 
-    wx.getStorage({
-      key: 'proDetail',
-      success: function (res) {
-
-        console.log(res.data.s)
-      },
-      fail: function (res) { },
-      complete: function (res) { },
+    wx.navigateTo({
+      url: '/pages/pro_detail/detail',
     })
 
   },

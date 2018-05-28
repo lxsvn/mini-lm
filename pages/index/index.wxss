@@ -6,18 +6,20 @@ swiper {
 
 swiper swiper-item image {
   width: 100%;
+  height: 100%;
 }
 
 .pro_list {
   width: 94%;
   background: #fff;
   border-width: 3rpx;
-  border-color: #666;
+  border-color: #aaa;
   border-style: solid;
   border-radius: 15rpx;
   position: relative;
   margin-left: 2%;
   margin-top: 20rpx;
+  margin-bottom: 20rpx;
   padding: 10rpx;
 }
 
@@ -104,7 +106,7 @@ swiper swiper-item image {
   width: 100%;
   height: 2rpx;
   margin-top: 20rpx;
-  background-color: #999;
+  background-color: #aaa;
 }
 
 .footer{
@@ -113,6 +115,7 @@ swiper swiper-item image {
 
 .application_requirement{
 font-size: 26rpx;
+color: #999;
 
 }
 .user_info {
