@@ -46,5 +46,4 @@
   </view>
 </view>
 
-
-<image src='/assets/imgs/ic_mine_blue.png' class='user_info'></image>
+<button  class='user_info' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">我的</button>

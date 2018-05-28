@@ -11,16 +11,16 @@ Page({
     proList: [],
     hasNextPage: true
   },
-/**
- * 前往产品详情页
- */
+  /**
+   * 前往产品详情页
+   */
   to_pro_detail: function (data) {
     var index = data.currentTarget.dataset.index;
 
     var proList = this.data.proList;
- 
+
     var s = proList[index]
-  
+
     wx.setStorage({
       key: 'proDetail',
       data: s,
@@ -47,7 +47,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -70,8 +70,10 @@ Page({
     }
   },
 
-
-  getUserInfo: function(e) {
+  /**
+   * 获取用户信息
+   */
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -104,7 +106,16 @@ Page({
       getProLsit(that, pageIndex);
     }
 
+  },
+  /**
+   * 去我的界面
+   */
+  getPhoneNumber: function () {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv)
+    console.log(e.detail.encryptedData)
   }
+
 })
 
 /**
@@ -147,13 +158,13 @@ function getProLsit(that, pageIndex) {
 /**
  * 获取首页信息
  */
-function getHomeInfo(that){
+function getHomeInfo(that) {
   var url = config.homeInfoUrl;
   wx.request({
     url: url,
-    success:function(res){
+    success: function (res) {
       console.log(res.data)
-      var banners=[];
+      var banners = [];
       for (var i = 0, len = res.data.Banners.length; i < len; i++) {
         banners.push(res.data.Banners[i].Image)
       }
