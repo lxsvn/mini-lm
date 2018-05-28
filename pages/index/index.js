@@ -127,7 +127,7 @@ Page({
  * 请求产品列表数据
  */
 function getProLsit(that, pageIndex) {
-  var url = config.apis.productsListUrl;
+  var url = config.productsListUrl;
   wx.request({
     url: url,
     data: {
@@ -165,7 +165,7 @@ function getProLsit(that, pageIndex) {
  */
 
 function getHomeInfo(that){
-  var url = config.apis.homeInfoUrl;
+  var url = config.homeInfoUrl;
   wx.request({
     url: url,
     success: function (res) {
