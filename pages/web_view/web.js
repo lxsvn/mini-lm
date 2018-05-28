@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      url:options.url
+     // url:options.url
     })
   },
 })
