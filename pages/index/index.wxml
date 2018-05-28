@@ -47,4 +47,7 @@
 </view>
 
 
-<image src='/assets/imgs/ic_mine_blue.png' class='user_info' bindtap="goUserCenter"></image>
+
+<image class='user_info' src='/assets/imgs/ic_home_time.png' bindtap="go_to_user"></image>
+
+

@@ -119,13 +119,14 @@ color: #999;
 
 }
 .user_info {
-  width: 15%;
-  height: 10%;
+  width: 100rpx;
+  height:100rpx;
   margin-top: 1.6vw;
-  background: '/assets/imgs/ic_mine_blue.png';
   display: flex;
   flex-direction: row;
   position: fixed;
   bottom: 100rpx;
   left: 85%;
 }
+
+

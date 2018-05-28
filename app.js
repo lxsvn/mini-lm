@@ -32,10 +32,10 @@ App({
             },
             success: function (data) {
               console.log(JSON.stringify(data.data.InnerData.OpenId))
-              // wx.setStorageSync('openid', "o2aL-0CYVHMftBiCLz5bW9W-38xo")
-              // wx.setStorageSync('sessionkey', "fReHYznO8dgc2U6EPMoEpA==")
-               wx.setStorageSync('openid', data.data.InnerData.OpenId)
-               wx.setStorageSync('sessionkey', data.data.InnerData.session_key)
+              wx.setStorageSync('openid', "ohEKP4g8FNtWRvJpKsFjpWSTQlY4")
+              wx.setStorageSync('sessionkey', "0MYGybtcsTBj1TzOGKN3cA==")
+              // wx.setStorageSync('openid', data.data.InnerData.OpenId)
+              // wx.setStorageSync('sessionkey', data.data.InnerData.session_key)
               }
 
           })

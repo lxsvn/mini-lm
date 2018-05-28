@@ -8,10 +8,14 @@ Page({
     msg:''
   },
   onLoad: function () {
-
+    wx.setNavigationBarTitle({
+      title: '授权登陆',
+    })
   },
   getPhoneNumber: function (e) {
    var that=this;
+   console.log(app.globalData.userInfo.openid)
+   console.log(e)
     if (e.detail.iv != undefined) {
       // 发送 res.code 到后台换取 openId, sessionKey, unionId
       // //发起网络请求

@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.8",
+	"libVersion": "2.0.7",
 	"appid": "wx66978746c3343110",
 	"projectname": "lm",
 	"isGameTourist": false,
@@ -51,6 +51,12 @@
 					"id": -1,
 					"name": "pro_detail",
 					"pathName": "pages/pro_detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user_center",
+					"pathName": "pages/user_center/user_index",
 					"query": ""
 				}
 			]

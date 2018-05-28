@@ -1,1 +1,25 @@
 /* pages/user_center/user_index.wxss */
+.avatar_view{
+  width: 100%;
+  height:250rpx;
+  display: flex;
+  margin-top: 200rpx;
+  justify-content:center;
+}
+.avatar{
+  width: 220rpx;
+  height: 220rpx;
+}
+.name{
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+
+.getPhone{
+  margin-top: 100rpx;
+  width: 80%;
+  background: #445E99;
+  color: #fff;
+}

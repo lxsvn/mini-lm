@@ -82,7 +82,18 @@ Page({
     })
   },
 
-  goUserCenter: function (e) {
+sssss:function(){
+  if (e.detail.iv != undefined) {
+
+  }else{
+
+  }
+},
+
+  /**
+   * 去用户中心
+   */
+  go_to_user: function (e) {
     app.goUserCenter();
   },
   
@@ -112,15 +123,6 @@ Page({
     }
 
   },
-  /**
-   * 去我的界面
-   */
-  getPhoneNumber: function () {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
-  }
-
 })
 
 /**
