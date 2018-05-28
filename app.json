@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/logs/logs",
     "pages/index/index",
+    "pages/logs/logs",
     "pages/high_limit/limit",
     "pages/low_rate/rate",
     "pages/lending_fast/lending",
     "pages/pro_detail/detail",
-    "pages/web_view/web"
+    "pages/web_view/web",
+    "pages/user_center/user_index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
