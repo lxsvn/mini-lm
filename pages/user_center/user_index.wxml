@@ -1,2 +1,5 @@
 <!--pages/user_center/user_index.wxml-->
-<text>pages/user_center/user_index.wxml</text>
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权登陆</button>
+<view> {{ msg }} </view>
