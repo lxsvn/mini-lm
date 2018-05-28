@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/logs/logs",
     "pages/index/index",
+    "pages/logs/logs",
     "pages/high_limit/limit",
     "pages/low_rate/rate",
     "pages/lending_fast/lending",
