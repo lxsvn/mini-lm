@@ -1,8 +1,15 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+ /** wxss **/
+/** 修改button默认的点击态样式类**/
+.button-hover {
+  background-color: red;
 }
-.log-item {
-  margin: 10rpx;
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: blue;
+}
+button{
+  margin-top: 5px;
+}
+.title{
+  text-align: center
 }

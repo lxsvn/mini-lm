@@ -1,6 +1,7 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="title">
+  授权测试
 </view>
+  
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取绑定手机号</button>
+
+<text>{{msg}}</text>

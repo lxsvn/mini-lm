@@ -6,11 +6,11 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    var sessionkey = wx.getStorageSync('sessionkey')
-    console.log("sessionkey:" + sessionkey)
+    var openid = this.globalData.userInfo.openid
+    console.log("openid:" + openid)
     // console.log(JSON.stringify(this.globalData))
     // console.log(this.globalData.userInfo.sessionkey) 
-    if (!sessionkey) {
+    if (!openid) {
       // 登录
       wx.login({
         success: res => {
@@ -28,10 +28,12 @@ App({
               code: res.code
             },
             success: function (data) {
-               console.log(JSON.stringify(data.data.InnerData.OpenId))
+              console.log(JSON.stringify(data.data.InnerData.OpenId))
+              // wx.setStorageSync('openid', "o2aL-0CYVHMftBiCLz5bW9W-38xo")
+              // wx.setStorageSync('sessionkey', "fReHYznO8dgc2U6EPMoEpA==")
                wx.setStorageSync('openid', data.data.InnerData.OpenId)
                wx.setStorageSync('sessionkey', data.data.InnerData.session_key)
-            }
+              }
 
           })
         }
