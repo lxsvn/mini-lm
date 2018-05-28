@@ -6,10 +6,6 @@ var hostWS = 'wss://mi-iq-socket-dev.houputech.com/iq'  //开发环境
 
 var baseUrl ='https://mbbd-api.houputech.com'
 
-var productsListUrl = baseUrl +'/1.0/contentsV2/Products'
-
-var homeInfoUrl = baseUrl +'/1.0/contentsV2/HomePageInfo'
-
 var appId = 'wx66978746c3343110'
 
 var service = {
@@ -17,18 +13,11 @@ var service = {
   hostWS
 }
 
-var apiCodes = {
-  pushHandShake: '10000000',
-  getNextQuestion:'20001000',
-  postLogin: '10000000',
-  postLogin: '10000000',
+var apis = {
+    productsListUrl:baseUrl + '/1.0/contentsV2/Products',
+    homeInfoUrl: baseUrl + '/1.0/contentsV2/HomePageInfo',
+    wxLoginUrl: baseUrl + '/1.0/miniapp/WxLogin',
+    wxLoginSensitiveInfoUrl:baseUrl + '/1.0/miniapp/WxLoginSensitiveInfo',
 }
 
-var baseMsg = {
-  "Channel": "mini",
-  "Type": 1,
-  "Code": "",
-  "Data": {}
-}
-
-module.exports = { service, apiCodes, baseMsg, productsListUrl, homeInfoUrl} 
+module.exports = { service, apis} 

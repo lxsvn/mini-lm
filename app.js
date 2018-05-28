@@ -1,4 +1,7 @@
 //app.js
+
+var config = require('config.js');
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -7,7 +10,7 @@ App({
     wx.setStorageSync('logs', logs)
 
     var openid = this.globalData.userInfo.openid
-    console.log("openid:" + openid)
+    console.log(config)
     // console.log(JSON.stringify(this.globalData))
     // console.log(this.globalData.userInfo.sessionkey) 
     if (!openid) {
@@ -22,7 +25,7 @@ App({
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           // //发起网络请求
           wx.request({
-            url: 'https://mbbd-api.houputech.com/1.0/miniapp/WxLogin',
+            url: `${config.apis.wxLoginUrl}`,
             method: "POST",
             data: {
               code: res.code
@@ -68,5 +71,11 @@ App({
       openid: wx.getStorageSync('openid'),
       mobile: wx.getStorageSync('mobile'),
       }
-  }
+  },
+
+  goUserCenter: function (e) {
+    wx.navigateTo({
+      url: '/pages/user_center/user_index'
+    })
+  },
 })

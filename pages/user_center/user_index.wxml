@@ -1,0 +1,8 @@
+<view class="title">
+  授权测试
+</view>
+  <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取绑定手机号</button>
+
+<text>{{msg}}</text>

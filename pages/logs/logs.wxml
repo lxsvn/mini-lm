@@ -1,6 +1,3 @@
-<view class="title">
-  授权测试
-</view>
   
 <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取绑定手机号</button>
 
