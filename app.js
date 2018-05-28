@@ -6,13 +6,42 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    var sessionkey = wx.getStorageSync('sessionkey')
+    console.log("sessionkey:" + sessionkey)
+    if (!sessionkey) {
+      // 登录
+      wx.login({
+        success: res => {
+          wx.showToast({
+            title: 'wx.login:' + res.code,
+            icon: 'success',
+            duration: 2000
+          })
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          // //发起网络请求
+          wx.request({
+            url: 'https://mbbd-api.houputech.com/1.0/miniapp/WxLogin',
+            method: "POST",
+            data: {
+              code: res.code
+            },
+            success: function (data) {
 
+              //console.log(data.InnerData.openid) 
+              console.log(JSON.stringify(data))
+              wx.setStorageSync('openid', data.data.InnerData.openid)
+              wx.setStorageSync('sessionkey', data.data.InnerData.session_key)
+
+              // console.log(data.InnerData.openid)
+              // console.log(data.InnerData.session_key)
+              //console.log(JSON.stringify(data))
+            }
+
+          })
+        }
+      })
+
+    }
     // 获取用户信息
     wx.getSetting({
       success: res => {
