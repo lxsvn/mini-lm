@@ -34,6 +34,8 @@ Page({
 
   onLoad: function () {
 
+    app.aldstat.sendEvent('事件名称');
+
     wx.showLoading({
       title: '加载中',
     })
@@ -167,7 +169,7 @@ function getProLsit(that, pageIndex) {
  */
 
 function getHomeInfo(that){
-  var url = config.homeInfoUrl;
+  var url = config.apis.homeInfoUrl;
   wx.request({
     url: url,
     success: function (res) {

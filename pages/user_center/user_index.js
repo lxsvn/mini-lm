@@ -5,7 +5,7 @@ var config = require('../../config.js');
 var app = getApp()
 Page({
   data: {
-    msg:''
+    msg: ''
   },
   onLoad: function () {
     wx.setNavigationBarTitle({
@@ -13,9 +13,10 @@ Page({
     })
   },
   getPhoneNumber: function (e) {
-   var that=this;
-   console.log(app.globalData.userInfo.openid)
-   console.log(e)
+    var that = this;
+    console.log(app.globalData.userInfo.openid)
+    console.log(e)
+
     if (e.detail.iv != undefined) {
       // 发送 res.code 到后台换取 openId, sessionKey, unionId
       // //发起网络请求
@@ -28,6 +29,7 @@ Page({
           openId: app.globalData.userInfo.openid,
         },
         success: function (data) {
+          console.log(data)
           that.setData({
             msg: data.data.InnerData.Mobile
           })
