@@ -6,4 +6,5 @@
     <open-data class='name' type="userNickName"></open-data>
   </view>
 <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='getPhone'>授权登陆</button>
+<button  type="defaule" bindtap="clearCache" class='getPhone '>清空缓存</button>
 <view> {{ msg }} </view>

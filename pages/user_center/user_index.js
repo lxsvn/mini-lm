@@ -3,6 +3,7 @@ const util = require('../../utils/util.js')
 var config = require('../../config.js');
 
 var app = getApp()
+
 Page({
   data: {
     msg: ''
@@ -10,13 +11,17 @@ Page({
   onLoad: function () {
     wx.setNavigationBarTitle({
       title: '授权登陆',
-    })
+    }) 
+  },
+  clearCache:function(){
+    console.log(app.getUserInfo());
+    wx.removeStorageSync('openid')
+    console.log("s")
   },
   getPhoneNumber: function (e) {
     var that = this;
-    console.log(app.globalData.userInfo.openid)
-    console.log(e)
-
+    let userInfo = app.getUserInfo();
+   
     if (e.detail.iv != undefined) {
       // 发送 res.code 到后台换取 openId, sessionKey, unionId
       // //发起网络请求
@@ -26,14 +31,12 @@ Page({
         data: {
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv,
-          openId: app.globalData.userInfo.openid,
+          openId: userInfo.openid,
         },
         success: function (data) {
-          console.log(data)
           that.setData({
             msg: data.data.InnerData.Mobile
           })
-          console.log(JSON.stringify(data.data))
         }
 
       })
