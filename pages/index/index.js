@@ -8,6 +8,7 @@ Page({
     imgUrls: [
       '/assets/imgs/defalt_banner.jpg',
     ],
+    bannerList:[],
     proList: [],
     hasNextPage: true
   },
@@ -15,21 +16,45 @@ Page({
    * 前往产品详情页
    */
   to_pro_detail: function (data) {
+    var mobile = '';
+    var that = this;
+
     var index = data.currentTarget.dataset.index;
 
-    var proList = this.data.proList;
+    var proList = that.data.proList;
 
     var s = proList[index]
 
     wx.setStorage({
       key: 'proDetail',
-      data: s,
+      data: {'fromBanner':false,
+      'detail':s},
     })
 
     wx.navigateTo({
       url: '/pages/pro_detail/detail',
     })
 
+  },
+
+  /**
+   * 从banner 进入详情页
+   */
+  banner_to_pro:function(e){
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    var s = that.data.bannerList[index]
+    console.log(s) 
+    wx.setStorage({
+      key: 'proDetail',
+      data: {
+        'fromBanner': true,
+        'detail': s.Id
+      },
+    })
+    wx.navigateTo({
+      url: '/pages/pro_detail/detail',
+    })
   },
 
   onLoad: function () {
@@ -84,13 +109,13 @@ Page({
     })
   },
 
-sssss:function(){
-  if (e.detail.iv != undefined) {
+  sssss: function () {
+    if (e.detail.iv != undefined) {
 
-  }else{
+    } else {
 
-  }
-},
+    }
+  },
 
   /**
    * 去用户中心
@@ -98,7 +123,7 @@ sssss:function(){
   go_to_user: function (e) {
     app.goUserCenter();
   },
-  
+
   /**
     * 下拉刷新
     */
@@ -168,18 +193,18 @@ function getProLsit(that, pageIndex) {
  * 获取首页信息
  */
 
-function getHomeInfo(that){
+function getHomeInfo(that) {
   var url = config.apis.homeInfoUrl;
   wx.request({
     url: url,
     success: function (res) {
-      console.log(res.data)
       var banners = [];
       for (var i = 0, len = res.data.Banners.length; i < len; i++) {
         banners.push(res.data.Banners[i].Image)
       }
       that.setData({
-        imgUrls: banners
+        imgUrls: banners,
+        bannerList: res.data.Banners
       })
     }
   })

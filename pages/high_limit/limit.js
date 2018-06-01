@@ -1,6 +1,6 @@
 // pages/high_limit/limit.js
 var config = require('../../config.js');
-
+const app = getApp()
 var pageIndex=1;
 Page({
 
@@ -54,6 +54,14 @@ Page({
     pageIndex=1;
     getProLsit(that, pageIndex);
   },
+
+  /**
+ * 去用户中心
+ */
+  go_to_user: function (e) {
+    app.goUserCenter();
+  },
+
   /**
    * 上拉加载
    */

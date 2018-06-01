@@ -18,6 +18,7 @@ var apis = {
     homeInfoUrl: baseUrl + '/1.0/contentsV2/HomePageInfo',
     wxLoginUrl: baseUrl + '/1.0/miniapp/WxLogin',
     wxLoginSensitiveInfoUrl:baseUrl + '/1.0/miniapp/WxLoginSensitiveInfo',
+    proDetailUrl: baseUrl +'/1.0/contentsV2/Product'
 }
 
 module.exports = { service, apis} 

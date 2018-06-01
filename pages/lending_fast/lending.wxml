@@ -40,4 +40,5 @@
 
 
 
-<image src='/assets/imgs/ic_mine_blue.png' class='user_info'></image>
+<image class='user_info' src='/assets/imgs/ic_mine_blue.png' bindtap="go_to_user"></image>
+

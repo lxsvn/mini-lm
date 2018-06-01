@@ -2,21 +2,37 @@
 const util = require('../../utils/util.js')
 var config = require('../../config.js');
 
-var app = getApp()
+const app = getApp()
 Page({
   data: {
-    msg: ''
+    msg: '',
+     btn_content: '授权登陆',
+     hasPhone:false
   },
   onLoad: function () {
+    var that=this;
     wx.setNavigationBarTitle({
       title: '授权登陆',
+    })
+    wx.getStorage({
+      key: 'mobile',
+      success: function(res) {
+        if (res.data.length > 2) {
+          that.setData({
+            btn_content: '已授权',
+            hasPhone: true
+          })
+
+        }
+      },
+      fail:function(){
+       
+      }
     })
   },
   getPhoneNumber: function (e) {
     var that = this;
-    console.log(app.globalData.userInfo.openid)
-    console.log(e)
-
+    var openId = app.getUserInfo().openid;
     if (e.detail.iv != undefined) {
       // 发送 res.code 到后台换取 openId, sessionKey, unionId
       // //发起网络请求
@@ -26,14 +42,27 @@ Page({
         data: {
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv,
-          openId: app.globalData.userInfo.openid,
+          openId: wx.getStorageSync('openid'),
         },
         success: function (data) {
-          console.log(data)
-          that.setData({
-            msg: data.data.InnerData.Mobile
-          })
-          console.log(JSON.stringify(data.data))
+          if (data.data.InnerData.Mobile!=null&&data.data.InnerData.Mobile.length>2){
+
+            wx.setStorage({
+              key: 'mobile',
+              data: data.data.InnerData.Mobile,
+            });
+
+            that.setData({
+              btn_content: '授权成功'
+            })
+            wx.showToast({
+              title: '授权成功',
+            })
+            setTimeout(function(){
+              wx.navigateBack()
+            },500)
+           
+          }
         }
 
       })
@@ -46,9 +75,5 @@ Page({
       })
       return;
     }
-
-    // console.log(e.detail.errMsg)
-    // console.log(e.detail.iv)
-    // console.log(e.detail.encryptedData)
   }
 })
