@@ -67,7 +67,6 @@ Page({
       }
     })
 
-
   }
 
 })
@@ -78,8 +77,6 @@ Page({
  */
 function getProDetail(that, pid) {
   var proUrl = config.apis.proDetailUrl;
-  console.log(pid)
-  console.log(proUrl)
   wx.request({
     url: proUrl,
     data: {
@@ -87,8 +84,19 @@ function getProDetail(that, pid) {
       "channel": 'miniapp',
     },
     success: function (res) {
-      console.log(res)
-      wx.hideLoading()
+      wx.hideLoading() 
+      var proName = res.data.Name;
+      wx.setNavigationBarTitle({
+        title: proName,
+      })
+      var conditions = res.data.Extend6Convert
+      var approves = res.data.Extend7Convert
+      that.setData({
+        proInfo: res.data,
+        conditionList: conditions,
+        approveList: approves
+      })
+      url = res.data.Extend1
     }
   })
 }

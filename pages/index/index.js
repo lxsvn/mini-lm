@@ -44,12 +44,12 @@ Page({
     var that = this;
     var index = e.currentTarget.dataset.index;
     var s = that.data.bannerList[index]
-    console.log(s) 
+    var proId = s.AppUrl.split(":")[1]
     wx.setStorage({
       key: 'proDetail',
       data: {
         'fromBanner': true,
-        'detail': s.Id
+        'detail': proId
       },
     })
     wx.navigateTo({
