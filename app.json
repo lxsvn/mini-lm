@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/index/index",
     "pages/logs/logs",
     "pages/high_limit/limit",
@@ -7,12 +8,15 @@
     "pages/lending_fast/lending",
     "pages/pro_detail/detail",
     "pages/web_view/web",
-    "pages/user_center/user_index"
+    "pages/user_center/user_index",
+    "pages/bs_index/bs_index",
+    "pages/game/game",
+    "pages/over/over"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#445E99",
-    "navigationBarTitleText": "爸爸贷款",
+    "navigationBarTitleText": "爸爸的钱包",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -40,8 +44,8 @@
       {
         "pagePath": "pages/lending_fast/lending",
         "text": "放款快",
-          "iconPath": "/assets/imgs/ic_loan_unselect.png",
-          "selectedIconPath": "/assets/imgs/ic_loan_select.png"
+        "iconPath": "/assets/imgs/ic_loan_unselect.png",
+        "selectedIconPath": "/assets/imgs/ic_loan_select.png"
       }
     ]
   }

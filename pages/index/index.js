@@ -37,6 +37,17 @@ Page({
 
   },
 
+
+  /**
+    * 用户点击右上角分享
+    */
+  onShareAppMessage: function () {
+    return {
+      title: '爸爸的钱包您的随身钱包',
+      path: '/pages/welcome/welcome',
+      imageUrl: config.shareImageUrl
+    }
+  },
   /**
    * 从banner 进入详情页
    */
@@ -59,7 +70,7 @@ Page({
 
   onLoad: function () {
 
-    app.aldstat.sendEvent('事件名称');
+    // app.aldstat.sendEvent('事件名称');
 
     wx.showLoading({
       title: '加载中',
@@ -136,8 +147,8 @@ Page({
    * 上拉加载
    */
   onReachBottom: function () {
-
     var that = this;
+    console.log('上拉加载' + that.data.hasNextPage)
     if (that.data.hasNextPage) {
 
       wx.showLoading({
@@ -156,6 +167,7 @@ Page({
  * 请求产品列表数据
  */
 function getProLsit(that, pageIndex) {
+  console.log('上拉加载' + config.apis.productsListUrl)
   var url = config.apis.productsListUrl;
   wx.request({
     url: url,
@@ -166,6 +178,7 @@ function getProLsit(that, pageIndex) {
       "channel": 'miniapp',
     },
     success: function (res) {
+      console.log(res)
       that.data.hasNextPage = res.data.HasNextPage;
       if (pageIndex == 1) {
         var oldProList = res.data.Models;

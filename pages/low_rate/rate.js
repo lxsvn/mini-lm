@@ -24,20 +24,27 @@ Page({
   * 前往产品详情页
   */
   to_pro_detail: function (data) {
+    var mobile = '';
+    var that = this;
+
     var index = data.currentTarget.dataset.index;
 
-    var proList = this.data.proList;
+    var proList = that.data.proList;
 
     var s = proList[index]
-    console.log(s);
+
     wx.setStorage({
       key: 'proDetail',
-      data: s,
+      data: {
+        'fromBanner': false,
+        'detail': s
+      },
     })
 
     wx.navigateTo({
       url: '/pages/pro_detail/detail',
     })
+
 
   },
 
@@ -49,10 +56,14 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
-   */
+    * 用户点击右上角分享
+    */
   onShareAppMessage: function () {
-
+    return {
+      title: '爸爸的钱包您的随身钱包',
+      path: '/pages/welcome/welcome',
+      imageUrl: config.shareImageUrl
+    }
   },
   /**
    * 下拉刷新
@@ -66,7 +77,6 @@ Page({
    * 上拉加载
    */
   onReachBottom: function () {
-
     var that = this;
     if (that.data.hasNextPage) {
 

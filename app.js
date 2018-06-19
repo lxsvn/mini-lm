@@ -1,8 +1,7 @@
 //app.js
 
 var config = require('config.js');
-var aldstat = require("./utils/ald-stat.js");
-
+// var aldstat = require("./utils/ald-stat.js");
 App({
   onLaunch: function () {
 

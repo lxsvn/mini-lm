@@ -45,6 +45,16 @@ Page({
 
   },
   /**
+  * 用户点击右上角分享
+  */
+  onShareAppMessage: function () {
+    return {
+      title: '爸爸的钱包您的随身钱包',
+      path: '/pages/welcome/welcome',
+      imageUrl: config.shareImageUrl
+    }
+  },
+  /**
    * 打开网页
    */
   to_web: function () {
